@@ -1,0 +1,7 @@
+{
+  "name": "cc-stuff",
+  "version": "0.1.0",
+  "description": "Personal Claude Code plugin: mods, skills and commands, synced across machines with git.",
+  "author": { "name": "Peng Sha" },
+  "license": "MIT"
+}

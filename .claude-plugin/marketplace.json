@@ -1,0 +1,13 @@
+{
+  "name": "cc-stuff",
+  "owner": {
+    "name": "Peng Sha"
+  },
+  "plugins": [
+    {
+      "name": "cc-stuff",
+      "source": "./"
+    }
+  ],
+  "description": "Peng Sha's personal Claude Code plugin."
+}
