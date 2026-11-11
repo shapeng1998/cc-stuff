@@ -16,6 +16,10 @@ Claude Code reads the plugin from this folder in place: edit, then `/reload-plug
 
 Draws ```` ```mermaid ```` blocks in Claude's replies as Unicode diagrams, with [grok-mermaid](https://github.com/xl0/grok-mermaid) (the renderer pi uses). A diagram wider than the transcript, or one grok-mermaid can't draw, stays as source.
 
+### `session-usage`
+
+Shows context use and session cost at the bottom right of the prompt, e.g. `64.6k / 1M · $0.41`. The context figure turns to the theme's warning color at 70% and error at 90%. Both update after each response; nothing is polled.
+
 ## License
 
 [MIT](LICENSE). `vendor/grok-mermaid` is grok-mermaid 0.2.3, Apache-2.0, copied unchanged with its [LICENSE](vendor/grok-mermaid/LICENSE).
