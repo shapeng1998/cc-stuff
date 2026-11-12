@@ -14,7 +14,7 @@ Claude Code reads the plugin from this folder in place: edit, then `/reload-plug
 
 ### `mermaid-art`
 
-Draws ```` ```mermaid ```` blocks in Claude's replies as Unicode diagrams, with [grok-mermaid](https://github.com/xl0/grok-mermaid) (the renderer pi uses). A diagram wider than the transcript, or one grok-mermaid can't draw, stays as source.
+Draws ` ```mermaid ` blocks in Claude's replies as Unicode diagrams, with [grok-mermaid](https://github.com/xl0/grok-mermaid) (the renderer pi uses). A diagram wider than the transcript, or one grok-mermaid can't draw, stays as source.
 
 ### `session-usage`
 

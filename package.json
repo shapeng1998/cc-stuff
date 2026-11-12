@@ -1,0 +1,19 @@
+{
+  "name": "cc-stuff",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Personal Claude Code plugin: mods, skills and commands",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "check": "oxfmt --check && oxlint",
+    "fmt": "oxfmt"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.77.0",
+    "oxlint": "^1.92.0",
+    "oxlint-tsgolint": "^7.0.2006",
+    "typescript": "^7.0.2"
+  },
+  "packageManager": "pnpm@12.18.0"
+}

@@ -14,6 +14,7 @@ Create a directory when first needed:
 
 ## Rules
 
-- After changing a mod: `claude plugin validate .` and `claude plugin test .`, then `/reload-plugins`.
+- After changing a mod: `pnpm fmt` and `pnpm check` (oxfmt, then oxlint with type-aware rules and type checking), `claude plugin validate .` and `claude plugin test .`, then `/reload-plugins`.
+- Type checking needs the API declarations in `.claude-plugin/types/` (gitignored). The engine writes them only when it hot-reloads this folder, so run `claude --plugin-dir ~/Projects/cc-stuff` once after cloning or updating Claude Code; an installed plugin's folder is never written in.
 - For user-visible changes, bump `version` in `.claude-plugin/plugin.json` and add a `CHANGELOG.md` entry (`## [x.y.z] - YYYY-MM-DD`).
 - Add a short `README.md` section for every new mod, skill, command or agent.
