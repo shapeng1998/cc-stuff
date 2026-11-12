@@ -1,5 +1,7 @@
 // Context use and session cost at the bottom right of the prompt: `64.6k / 1M · $0.41`.
-// Both arrive with each response the engine already gets, so nothing is polled.
+// `session.measure` reports both after each main-thread turn; cost also grows in a
+// subagent's turns and in the prompt suggestion asked for after a turn, so those
+// events redraw it too. Nothing is polled.
 import type { Register } from 'claude-code';
 
 /** Context fill, in percent, where the figure turns to the theme's warning and error colors. */
@@ -22,6 +24,19 @@ export const registerSessionUsage: Register = (on) => {
   on('session.measure', async ($, e, next) => {
     const result = await next(e);
     if (e.changed.includes('context') || e.changed.includes('cost')) $.ui.invalidate('ui.render');
+    return result;
+  });
+
+  // The main thread's turns are measured above.
+  on('turn.complete', async ($, e, next) => {
+    const result = await next(e);
+    if (e.agentId !== undefined) $.ui.invalidate('ui.render');
+    return result;
+  });
+
+  on('prompt.suggest', async ($, e, next) => {
+    const result = await next(e);
+    $.ui.invalidate('ui.render');
     return result;
   });
 

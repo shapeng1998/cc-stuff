@@ -18,7 +18,7 @@ Draws ` ```mermaid ` blocks in Claude's replies as Unicode diagrams, with [grok-
 
 ### `session-usage`
 
-Shows context use and session cost at the bottom right of the prompt, e.g. `64.6k / 1M · $0.41`. The context figure turns to the theme's warning color at 70% and error at 90%. Both update after each response; nothing is polled.
+Shows context use and session cost at the bottom right of the prompt, e.g. `64.6k / 1M · $0.41`. The context figure turns to the theme's warning color at 70% and error at 90%. Both update after each turn; the cost also after each subagent turn and the prompt suggestion that follows a turn, which `/usage` counts too. Nothing is polled.
 
 ## License
 
